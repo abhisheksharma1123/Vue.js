@@ -1,0 +1,12 @@
+.active {
+  border: 2px solid red;
+  padding: 1rem;
+  display: inline-block;
+  width: 30%;
+  margin: 0;
+  margin-left: 3rem;
+}
+.even {
+  color: green;
+  cursor: pointer;
+}
