@@ -11,7 +11,7 @@
     <div id="root">
       <h1>{{title}}</h1>
       <input v-model="input" type="text" placeholder="type something" />
-      <p :class="[input ? 'active': '']">{{input}}</p>
+      <p :class="[input ? 'active': '']" v-if="input">{{input}}</p>
       <p v-text="input"></p>
       <ul>
         <li :key="item" v-for="(item, index) in items">
@@ -36,8 +36,13 @@
         >
           {{ n }}
         </li>
+        <!-- see above we iterated over computed property instead of data. computed method
+          runs w whenever a dependency has changed. Cached, by default getter, we can define
+        setter. -->
       </ul>
       <p v-html="havingHTML"></p>
+      <p><component1 text="wooHoo!" /></p>
+      <component1 />
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="main.js"></script>

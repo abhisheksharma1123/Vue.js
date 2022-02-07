@@ -21,4 +21,17 @@ const App = {
   },
 };
 
-Vue.createApp(App).mount("#root");
+const app = Vue.createApp(App);
+app.component("component1", {
+  template: `<div>I am your child got this prop: {{text}}</div>`,
+  props: {
+    text: {
+      type: String,
+      default: "default",
+    },
+  },
+});
+// in case of array or objects type: Array or Object and their defaults should be written
+// as return of function
+
+app.mount("#root");
